@@ -4,43 +4,50 @@
 # user.
 
 import random
-'''
-"Snake" = 1
-"Gun" = -1
-"Water" = 0
-'''
-computer = random.choice([-1,0,1])
-yourInptStr =input("Enter Your chocie : ")
-youDict = {
-    "s" :  1,
-    "S" :  1,
-    "g" : -1,
-    "G" : -1,
-    "w" :  0,
-    "W" :  0
-}
-you = youDict[ yourInptStr ]
-revDict = {
-    1 : "Snake",
-    -1 : "Gun",
-    0 : "Water"
-}
-print(f"Your Choice is {revDict[you]}\nComputer Choosed {revDict[computer]}, Therefore")
-if(you == computer):
-    print("Its a Draw")
-else:
-    if(computer == -1 and you == 0):
-        print("You Win!")
-    elif(computer == -1 and you == 1):
-        print("You Lose!")
-    elif(computer == 1 and you == -1):
-        print("You Win!")
-    elif(computer == 1 and you == 0):
-        print("You Lose!")
-    elif(computer == 0 and you == -1):
-        print("You Lose!")
-    elif(computer == 0 and you == 1):
-        print("You Win!")
+def game():
+    '''
+    "Snake" = 1
+    "Gun" = -1
+    "Water" = 0
+    '''
+    computer = random.choice([-1,0,1])
+    yourInptStr =input("Enter Your chocie : ")
+    youDict = {
+        "s" :  1,
+        "S" :  1,
+        "g" : -1,
+        "G" : -1,
+        "w" :  0,
+        "W" :  0
+    }
+    you = youDict[ yourInptStr ]
+    revDict = {
+        1 : "Snake",
+        -1 : "Gun",
+        0 : "Water"
+    }
+    print(f"Your Choice is {revDict[you]}\nComputer Choosed {revDict[computer]}, Therefore")
+    if(you == computer):
+        print("Its a Draw")
     else:
-        print("Something went Wrong")
+        if(computer == -1 and you == 0):
+            print("Congrats!!!...... You WIN")
+        elif(computer == -1 and you == 1):
+            print("Awww.... LOST!! HEHEHEHEHE")
+        elif(computer == 1 and you == -1):
+            print("Congrats!!!...... You WIN")
+        elif(computer == 1 and you == 0):
+            print("Awww.... LOST!! HEHEHEHEHE")
+        elif(computer == 0 and you == -1):
+            print("Awww.... LOST!! HEHEHEHEHE")
+        elif(computer == 0 and you == 1):
+            print("Congrats!!!...... You WIN")
+        else:
+            print("Something went Wrong")
+    choice = str(input("Want to play again : "))
+    if(choice == 'yes'):
+        game()
+    else:
+        exit()
+game()
     
