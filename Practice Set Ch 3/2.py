@@ -9,9 +9,10 @@
 from datetime import date
 Name = input("Enter Your Name\n")
 Date = str(date.today())
-letter = f'''
+letter = '''
 Dear <|Name|>,
 You are selected!
 <|Date|>
 '''
+
 print(letter.replace("<|Name|>",Name).replace("<|Date|>",Date))
