@@ -5,4 +5,6 @@
 # s = {8, 7, 12, "Harry", [1,2]}
 
 s = {8, 7, 12, "Harry", [1,2]}
-print(s)
+s = {8, 7, 12, "Harry", [1,2,3]} 
+    
+print(s) # it will show TypeError unhashable type: 'list' Because we cannot store a list inside a set
